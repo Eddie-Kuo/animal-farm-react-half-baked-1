@@ -1,3 +1,11 @@
-export default function Animal() {
-  return <></>;
+import './Animal.css';
+
+export default function Animal(props) {
+  return (
+    <div className="animal" style={{ top: props.animal.top, left: props.animal.left }}>
+      <img src={`${process.env.PUBLIC_URL}/animals/${props.animal.type}.svg`} />
+      <span className='name'>{props.animal.name}</span> 
+      <span>{props.animal.says}</span>  
+    </div>
+  );
 }
